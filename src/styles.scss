@@ -1,0 +1,23 @@
+@import "./theme.scss";
+html,body,mat-sidenav-container,.side{
+    width: 100%;
+    height: 100%;
+    margin: 0
+}
+.side{
+    display: flex;
+    flex-direction: column;
+}
+main { 
+    flex: 1;
+}
+.fill_remaining_space{
+    flex: 1 1 auto;
+}
+.full_width{
+    width: 100%;
+}
+.text_right{
+    margin-right: 10px;
+    text-align: end; 
+}

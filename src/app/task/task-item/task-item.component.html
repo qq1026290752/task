@@ -1,0 +1,21 @@
+<mat-list-item class="cantainer"
+(click)="onItemClick();"
+[ngClass]="{
+  'priority-normal':item.priority === 3,
+  'priority-inportant':item.priority === 2,
+  'priority-emergency':item.priority === 1
+}">
+<mat-checkbox class="completd-status" [checked]="item.completd" (click)="onCheckBoxClick($event);"></mat-checkbox>
+<div mat-line class="context"  [ngClass]="{'completd' : item.completd}">
+  <span [matTooltip] = "item.desc">{{item.desc}}</span>
+</div>
+<div class="botton_icon" mat-line>
+  <span class="due_date" *ngIf="item.dueDate">
+    {{item.dueDate | date:'yy-MM-dd'}}
+  </span> 
+  <mat-icon *ngIf="item.reminder" class="alarm">
+    alarm
+  </mat-icon>
+</div>
+<mat-icon [svgIcon]="avatar" class="avatar" mat-list-avatar></mat-icon>
+</mat-list-item>

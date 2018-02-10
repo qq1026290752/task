@@ -1,0 +1,55 @@
+.due_date{
+    background-color: #f40;
+    color: #fff;
+}
+.alarm{
+    font-size: 18px;
+}
+mat-icon.avatar{
+    overflow: hidden;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    margin: 12px;
+    order: 3
+}
+.botton_icon {
+    margin-bottom: 2px;
+    font-size: 10px;
+    width: 100%;
+    order: 1;
+    margin-top: 3px;
+}
+.completd-status{
+    order: -1; 
+}
+.completd{
+    opacity: 0.64;
+    color: #d9d9d9;
+    text-decoration: line-through; 
+}
+.context{
+    order: 1;
+    padding: 5px;
+    width: 100%;
+}
+
+.priority-normal{
+    border-left:3px solid #a6a6a6; 
+}
+.priority-inportant{
+    border-left:3px solid #ffaf38;
+
+}
+.priority-emergency{
+    border-left:3px solid red;
+     
+}
+.cantainer{
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+:host{
+    width: 100%;
+}

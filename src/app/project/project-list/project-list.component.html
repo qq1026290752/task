@@ -1,0 +1,12 @@
+<app-project-item *ngFor='let project of projects' 
+  [item]=project class="card" (invite)="launchInviteDialog();"
+  (editProject)="launchEditDialog();" 
+  (deleteProject) ="launchDelDialog();"
+>
+
+</app-project-item>
+<button mat-fab type="button" class="fab_button" (click)="openNerProjectDialog();">
+  <mat-icon>
+    add
+  </mat-icon>
+</button>
