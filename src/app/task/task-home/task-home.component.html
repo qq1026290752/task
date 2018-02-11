@@ -1,14 +1,15 @@
 <div class="taskList">
   <app-task-list *ngFor="let taskList of taskLists"
     class="list-container">
-    <app-task-header [header]="taskList.name" 
+    <app-task-header [header]="taskList.name"
     (newTask)="onNewTasksDialog();"
     (moveTaskAll)="launchMoveTaskDialog();"
     (editTable)="launchUpdataTaskListDialog()"
+    (delTaskAll)="launchDelTaskListDialog();"
     >
 
     </app-task-header>
-    <app-task-item 
+    <app-task-item
       [item]="task"
       *ngFor="let task of taskList.tasks"
       (itemsClick) = "launchUpdateTaskDialog(task);"

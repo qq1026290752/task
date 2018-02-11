@@ -102,4 +102,9 @@ export class TaskHomeComponent implements OnInit {
   launchUpdataTaskListDialog() {
     this.dialog.open(NewTaskListComponent, {data: {title: '修改任务列表'} });
   }
+  launchDelTaskListDialog() {
+    const dialogRef =  this.dialog.open(ConfirmDialogComponent,
+      {data: {title: '删除任务列表', content: '您确认删除此任务列表?'}});
+    dialogRef.afterClosed().subscribe(result => console.log(result));
+  }
 }
