@@ -5,12 +5,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { loadSvgResources } from '../utlis/svg.utils.module';
+import { AppRoutingModule } from '../app-routing.module';
 import 'hammerjs';
+import 'rxjs/add/operator/take';
 
 @NgModule({
   imports: [
     SharedModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   declarations: [
       HeaderComponent,
@@ -20,7 +25,9 @@ import 'hammerjs';
   exports: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ]
 })
 export class CoreModule {

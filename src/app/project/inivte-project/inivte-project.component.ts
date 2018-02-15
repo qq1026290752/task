@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-inivte-project',
   templateUrl: './inivte-project.component.html',
-  styleUrls: ['./inivte-project.component.scss']
+  styleUrls: ['./inivte-project.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InivteProjectComponent implements OnInit {
   items = [

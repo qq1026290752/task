@@ -15,6 +15,6 @@ export class AppComponent {
 
   swichTheme(isDark: MatSlideToggleChange) {
     this.darkTheme = isDark.checked ;
-    this.over.getContainerElement().classList.add("myapp-dark-theme");
+    this.over.getContainerElement().classList.add('myapp-dark-theme');
   }
-}
+};

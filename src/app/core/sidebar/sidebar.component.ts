@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {getDate } from 'date-fns';
 
 @Component({
@@ -8,12 +8,15 @@ import {getDate } from 'date-fns';
 })
 export class SidebarComponent implements OnInit {
 
+  @Output() navClick = new EventEmitter<void>();
   today = 'day_';
   constructor() { }
 
   ngOnInit() {
     this.today = `day_${getDate(new Date())}`;
   }
-
+  onMoverClick() {
+    this.navClick.emit();
+  }
 
 }

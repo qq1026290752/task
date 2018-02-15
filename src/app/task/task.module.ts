@@ -14,7 +14,7 @@ import { NewTaskListComponent } from './new-task-list/new-task-list.component';
   imports: [
     CommonModule,
     TaskRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: [
     TaskHeaderComponent,

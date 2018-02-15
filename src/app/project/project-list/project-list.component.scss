@@ -3,7 +3,7 @@
     flex: 0 0 360px;
     margin: 10px;
 }
-:host{
+.container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -13,4 +13,8 @@
     right: 32px;
     bottom: 96px;
     z-index: 1000;
+}
+app-project-item{
+    display: flex;
+    flex-direction: column;
 }

@@ -26,9 +26,11 @@ import {
     HttpClientModule
   } from '@angular/common/http';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { DirectiveModule } from '../directive/directive.module';
 
 @NgModule({
   imports: [
+    DirectiveModule,
     CommonModule,
     HttpClientModule,
     MatSidenavModule,
@@ -53,6 +55,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatSelectModule,
   ],
   exports: [
+    DirectiveModule,
     CommonModule,
     MatSidenavModule,
     HttpClientModule,
