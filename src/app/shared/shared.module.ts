@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+         FormsModule,
+         ReactiveFormsModule,
+        } from '@angular/forms';
+import {
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
@@ -27,6 +31,7 @@ import {
   } from '@angular/common/http';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { DirectiveModule } from '../directive/directive.module';
+import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
 
 @NgModule({
   imports: [
@@ -53,6 +58,8 @@ import { DirectiveModule } from '../directive/directive.module';
     MatTooltipModule,
     MatRadioModule,
     MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     DirectiveModule,
@@ -66,6 +73,7 @@ import { DirectiveModule } from '../directive/directive.module';
     MatButtonModule,
     MatIconModule,
     MatNativeDateModule,
+    FormsModule,
     MatCardModule,
     MatInputModule,
     MatListModule,
@@ -79,10 +87,13 @@ import { DirectiveModule } from '../directive/directive.module';
     MatTooltipModule,
     MatRadioModule,
     ConfirmDialogComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    ImageListSelectComponent,
   ],
   entryComponents: [
     ConfirmDialogComponent
   ],
-  declarations: [ConfirmDialogComponent]
+  declarations: [ConfirmDialogComponent, ImageListSelectComponent]
 })
 export class SharedModule { }

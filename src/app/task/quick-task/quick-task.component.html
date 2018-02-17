@@ -1,0 +1,9 @@
+<mat-input-container class="full_width">
+  <input matInput type="text" [(ngModel)] = "desc"
+      placeholder="在这里快速建立任务">
+  <button type="button" matSuffix mat-icon-button (click)="onSendQuickTask();">
+    <mat-icon>
+      send
+    </mat-icon>
+  </button> 
+</mat-input-container>

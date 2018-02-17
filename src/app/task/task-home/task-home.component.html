@@ -12,6 +12,7 @@
     >
 
     </app-task-header>
+    <app-quick-task (quickTask)="handleQuickTask($event);"></app-quick-task>
     <app-task-item
       [item]="task"
       *ngFor="let task of taskList.tasks"

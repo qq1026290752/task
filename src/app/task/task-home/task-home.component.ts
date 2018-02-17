@@ -113,4 +113,7 @@ export class TaskHomeComponent implements OnInit {
       {data: {title: '删除任务列表', content: '您确认删除此任务列表?'}});
     dialogRef.afterClosed().subscribe(result => console.log(result));
   }
+  handleQuickTask(desc: string ) {
+      console.log(desc);
+  }
 }
