@@ -11,7 +11,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
   openSidebar() {
-    //发射事件,给父类
     this.toggle.emit();
   }
   onChange(chencked: boolean) {

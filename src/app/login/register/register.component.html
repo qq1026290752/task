@@ -16,11 +16,7 @@
             <mat-input-container class="full_width">
               <input matInput type="password" placeholder="请确认您的密码" formControlName = "repeat"> 
             </mat-input-container>
-            <!--<mat-grid-list cols = '6' rowHeight = '1:1'>
-              <mat-grid-tile *ngFor="let item of items" >
-                <mat-icon [svgIcon] ="item" class="avatar"></mat-icon>
-              </mat-grid-tile>
-            </mat-grid-list>-->
+            <app-age-input formControlName = "dateOfBirth"></app-age-input>
             <app-image-list-select
               [useSvgIcon] = "true"
               [cols] = "6"

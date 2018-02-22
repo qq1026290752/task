@@ -22,12 +22,12 @@
         每日佳句
       </mat-card-title>
       <mat-card-subtitle>
-        少壮不努力老大徒伤悲
+        {{quote.cn}}
       </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-lg-image  src="assets/bj_image/jzgs.jpg" alt="" srcset="">
+    <img mat-card-lg-image  [src]="quote.pic" alt="" srcset="">
     <mat-card-content>  
-          Are you OK?
+      {{quote.en}}
     </mat-card-content>  
   </mat-card>
 </form>

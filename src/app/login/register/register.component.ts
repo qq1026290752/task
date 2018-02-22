@@ -21,11 +21,17 @@ export class RegisterComponent implements OnInit {
       nikeName: ['', Validators.required],
       password: [],
       repeat: [],
-      avatar: [img]
+      avatar: [img],
+      dateOfBirth : ['2018-01-01']
     });
+    console.log(this.form.get('dateOfBirth').value);
   }
 
   onSubmit({value, valid}, event: Event) {
-    console.log(value);
+    event.preventDefault();
+    if (!valid) {
+      return ;
+    }
+    console.log(valid);
   }
 }
