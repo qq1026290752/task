@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit({value, valid}, event: Event) {
+    // 防止表单默认行为
     event.preventDefault();
     if (!valid) {
       return ;

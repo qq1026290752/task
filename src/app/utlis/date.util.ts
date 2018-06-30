@@ -19,4 +19,4 @@ export const isValidDate = (datestr: string): boolean => {
            isValid(date) &&
            !isFuture(date) &&
            differenceInYears(Date.now() , date) < 150 ;
-}
+          };

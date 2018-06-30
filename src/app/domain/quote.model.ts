@@ -3,4 +3,4 @@ export interface Quote {
     cn: string;
     pic: string;
     en: string;
- }
+}
