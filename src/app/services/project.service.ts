@@ -25,18 +25,21 @@ export class ProjectService {
             coverImg: project.coverImg
         };
         return this.http
-                .patch(uri, JSON.stringify(toUpdate), { headers: this.headers})
-                .map(response => response.json());
+            .patch(uri, JSON.stringify(toUpdate), { headers: this.headers})
+            .map(response => response.json());
     }
     delete(project: Project): Observable<Project> {
-        const uri = `${this.config.uri}/${this.domain}/${project.id}`;
-        const toUpdate = {
-            name : project.name,
-            desc : project.desc,
-            coverImg: project.coverImg
-        };
+        const deleteTask$ = Observable.from(project.taskList)
+            .mergeMap(listId => this.http.delete(`${this.config.uri}/taskLists/${listId}`))
+            .count();
+          return deleteTask$
+                .switchMap(_ => this.http.delete(`${this.config.uri}/${this.domain}/${project.id}`))
+                .map(_ => project);
+    }
+    get (userId: string): Observable<Project[]> {
+        const uri = `${this.config.uri}/${this.domain}`;
         return this.http
-                .patch(uri, JSON.stringify(toUpdate), { headers: this.headers})
-                .map(response => response.json());
+            .get(uri, {params: {'members_like ': userId}})
+            .map(result => result.json() as Project[]);
     }
 }

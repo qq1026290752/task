@@ -5,6 +5,8 @@ import { MatDialog } from '@angular/material';
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 import { slideToRight } from '../../animation/routing.animations';
 import { ListAnimation } from '../../animation/list.animations';
+import { ServicesModule } from '../../services/services.module';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'app-project-list',
@@ -17,23 +19,13 @@ import { ListAnimation } from '../../animation/list.animations';
   changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class ProjectListComponent implements OnInit {
-  projects = [
-    {
-      'id': 1,
-      'name': '企业协作平台',
-      'desc': '这个是企业内部项目',
-      'coverImg': 'assets/image/covers/0.jpg'
-    },
-    {
-      'id': 2,
-      'name': '企业协作平台',
-      'desc': '这个是企业内部项目',
-      'coverImg': 'assets/image/covers/1.jpg'
-    }
-  ];
-  constructor(private dialog: MatDialog, private cd: ChangeDetectorRef ) { }
+  projects = [];
+  constructor(private dialog: MatDialog,
+              private cd: ChangeDetectorRef,
+              private projectService$: ProjectService ) { }
   @HostBinding('@routingAnimations') routingState;
   ngOnInit() {
+    this.projectService$.get('1').subscribe(projects => this.projects = projects );
   }
   openNerProjectDialog() {
     const dialogRef = this.dialog.open(NewProjectComponent, {data: {dark : false,  title: '新建项目'}});
@@ -63,4 +55,4 @@ export class ProjectListComponent implements OnInit {
       this.cd.markForCheck();
     });
   }
-};
+}
