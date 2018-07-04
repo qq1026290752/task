@@ -52,7 +52,7 @@ export class TaskService {
     complete(task: Task): Observable<Task> {
         const uri = `${this.config.uri}/${this.domain}/${task.id}`;
         return this.http
-            .patch(uri, JSON.stringify({completed: task.completed}), { headers: this.headers})
+            .patch(uri, JSON.stringify({completed: !task.completed}), { headers: this.headers})
             .map(response => response.json());
     }
 
