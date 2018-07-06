@@ -19,6 +19,7 @@ export class ProjectService {
                 .map(response => response.json());
     }
     update(project: Project): Observable<Project> {
+        console.log(project);
         const uri = `${this.config.uri}/${this.domain}/${project.id}`;
         const toUpdate = {
             name : project.name,
@@ -30,7 +31,7 @@ export class ProjectService {
             .map(response => response.json());
     }
     delete(project: Project): Observable<Project> {
-        const deleteTask$ = Observable.from(project.taskList)
+        const deleteTask$ = Observable.from(project.taskList ? project.taskList : [])
             .mergeMap(listId => this.http.delete(`${this.config.uri}/taskLists/${listId}`))
             .count();
           return deleteTask$

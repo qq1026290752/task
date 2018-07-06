@@ -18,7 +18,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS,  FormControl } 
     }
   ]
 })
-export class ImageListSelectComponent implements ControlValueAccessor, OnInit {
+export class ImageListSelectComponent implements ControlValueAccessor {
 
   @Input() cols = 6 ;
   @Input() rowHeight = '64px';
@@ -50,8 +50,5 @@ export class ImageListSelectComponent implements ControlValueAccessor, OnInit {
           validate: false
       }
     };
-  }
-  ngOnInit(): void {
-    console.log(this.items);
   }
 }
